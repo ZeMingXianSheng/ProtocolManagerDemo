@@ -31,19 +31,20 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    id<XXUserModuleDelegate> userTest = [XXProtocolManager serviceProvideForProtocolName:@""];
-    [userTest onLogout];
+    // 更新数据
+    id<XXUserModuleDelegate> userTest = [XXProtocolManager serviceProvideInstanceMethodForProtocolName:@"XXUserModuleDelegate"];
+    [userTest updateUserInfo];
     
     // 登出
-    id<XXUserModuleDelegate> userProtocol = [XXProtocolManager serviceProvideForProtocolName:@"XXUserModuleDelegate"];
+    id<XXUserModuleDelegate> userProtocol = [XXProtocolManager serviceProvideClassMethodForProtocolName:@"XXUserModuleDelegate"];
     [userProtocol onLogout];
     
     // 跳转订单详情
-    id<XXOrderModuleDelegate> orderProtocol = [XXProtocolManager serviceProvideForProtocolName:@"XXOrderModuleDelegate"];
+    id<XXOrderModuleDelegate> orderProtocol = [XXProtocolManager serviceProvideClassMethodForProtocolName:@"XXOrderModuleDelegate"];
     [orderProtocol gotoOrderDetail:@"1001"];
     
     // 跳转购物车
-    id<XXShoppingCartModuleDelegate> shoppingCartProtocol = [XXProtocolManager serviceProvideForProtocolName:@"XXShoppingCartModuleDelegate"];
+    id<XXShoppingCartModuleDelegate> shoppingCartProtocol = [XXProtocolManager serviceProvideClassMethodForProtocolName:@"XXShoppingCartModuleDelegate"];
     [shoppingCartProtocol gotoShoppingCart];
 }
 

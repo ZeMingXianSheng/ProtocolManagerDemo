@@ -10,7 +10,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XXProtocolManager : NSObject
-+ (id)serviceProvideForProtocolName:(NSString *)protocolName;
+/** 返回类对象*/
++ (id)serviceProvideClassMethodForProtocolName:(NSString *)protocolName;
+/** 返回实例对象*/
++ (id)serviceProvideInstanceMethodForProtocolName:(NSString *)protocolName;
+
 @end
 
 NS_ASSUME_NONNULL_END

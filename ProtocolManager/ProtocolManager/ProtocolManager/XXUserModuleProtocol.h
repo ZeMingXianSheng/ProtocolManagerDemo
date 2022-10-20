@@ -9,6 +9,8 @@
 #define XXUserModuleProtocol_h
 /** 用户模块协议*/
 @protocol XXUserModuleDelegate <NSObject>
+/** 更新用户信息*/
+- (void)updateUserInfo;
 
 /** 登录*/
 + (void)onLogin;

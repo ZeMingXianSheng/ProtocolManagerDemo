@@ -9,6 +9,11 @@
 
 @implementation XXUserModuleDelegate
 
+/** 更新用户信息*/
+- (void)updateUserInfo {
+    NSLog(@"更新数据");
+}
+
 /** 登录*/
 + (void)onLogin {
     
