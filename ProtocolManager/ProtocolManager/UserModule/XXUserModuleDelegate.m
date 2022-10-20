@@ -34,4 +34,8 @@
     
 }
 
+- (void)dealloc {
+    NSLog(@"XXUserModuleDelegate - dealloc");
+}
+
 @end
